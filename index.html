@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    
+    <div id="container">
+        <h2 class="mb-5 pt-3 text-white justify-center">Choose a city to display its weather</h2>
+
+        <div class="w-75">
+            <div class="input-group mb-3">
+                <input list="cities" type="text" id="city" class="form-control" placeholder="City">
+                    <datalist id="cities">
+                    </datalist>            
+                <div class="">
+                    <button onclick="display_weather()" class="btn bg-success text-white" type="button" id="">Display weather</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="results" class="mt-5">
+            
+        </div>
+       
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
