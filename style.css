@@ -36,6 +36,12 @@ body{
     width: 250px;
     border: 1px solid black;
     position: relative;
+    margin-bottom: 20px;
+}
+
+.card img {
+    width: 200px;
+    margin: 0 auto;
 }
 
 .remove {

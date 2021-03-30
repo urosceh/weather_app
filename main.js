@@ -5,8 +5,10 @@ fetch('https://restcountries.eu/rest/v2/region/europe')
         const input_options = document.getElementById("cities")
         data.forEach(country => {
             const input_option = document.createElement("option")
-            var option_value = country.capital
-            var option_value = `${country.capital}, ${country.name}`
+            // var option_value = `city=${country.capital}&country=${country.alpha2Code}`
+            
+            var option_value = `${country.capital},${country.alpha2Code}`
+
             input_option.setAttribute("value", option_value)
             input_options.appendChild(input_option)
         });
@@ -15,10 +17,12 @@ fetch('https://restcountries.eu/rest/v2/region/europe')
 function display_weather() {
     var selected_city = document.getElementById("city").value.toLowerCase()
     
-    var city = selected_city.split(",")[0]
+    var split_key = selected_city.split(",")
+    var city = split_key[0]
+    var country_code = split_key[1]
     city = city.split(" ").join("-")
 
-    fetch(`https://api.weatherbit.io/v2.0/current?city=${city}&key=03bd4cea8e164553819c5cfaba49bbc3`)
+    fetch(`https://api.weatherbit.io/v2.0/current?city=${city}&country=${country_code}&key=03bd4cea8e164553819c5cfaba49bbc3`)
         .then(res => res.json())
         .then(data => {
             get_results(data)
