@@ -54,28 +54,49 @@ function get_results(data) {
     const result_precip = document.createElement("p")
     result_precip.innerText = `Precipitation: ${data.data[0].precip.toFixed(0)}mm`
 
-    var results_arr = new Array(result_image, result_city, result_desc, result_temp, result_atemp, result_wind, result_hum, result_precip)
-
-    append_results(results_arr)
-}
-
-function append_results(arguments) {
-    
-    document.getElementById("container").style.justifyContent = "start"
-    
-    const results = document.getElementById("results")
-    results.textContent = ""
-    
-    arguments.forEach(arg => {
-        results.appendChild(arg)
+    const result_remove = document.createElement("button")
+    result_remove.innerText = "x"
+    result_remove.classList.add("remove")
+    result_remove.title = "Remove this result"
+    result_remove.addEventListener("click", () => {
+        remove_result(result_remove.parentElement)
     })
 
-    // results.appendChild(result_image)
-    // results.appendChild(result_city)
-    // results.appendChild(result_temp)
-    // results.appendChild(result_desc)
+    const card = document.createElement("div")
+    card.classList.add("card")
+    card.appendChild(result_image)
+    card.appendChild(result_city)
+    card.appendChild(result_desc)
+    card.appendChild(result_temp)
+    card.appendChild(result_atemp)
+    card.appendChild(result_wind)
+    card.appendChild(result_hum)
+    card.appendChild(result_precip)
+    card.appendChild(result_remove)
+
+    document.getElementById("container").style.justifyContent = "start"
+    const results = document.getElementById("results")
+    results.appendChild(card)
+
+    // add_remove_functionality()
 }
 
 function reset_top_bar() {
     document.getElementById("city").value = ""
+}
+
+function remove_result(el) {
+    el.remove()
+}
+
+function add_remove_functionality() {
+
+    var remove_buttons = new Array()
+    remove_buttons = document.querySelectorAll(".remove")
+    
+    remove_buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            console.log("this")
+        })
+    })
 }

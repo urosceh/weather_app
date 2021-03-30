@@ -6,6 +6,8 @@
 
 body{
     font-family: 'Muli', sans-serif;
+    /* background-image: linear-gradient(to bottom right, aquamarine, aqua, yellow); */
+    background-color: aquamarine;
 }
 
 #container {
@@ -15,6 +17,35 @@ body{
     width: 100vw;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(to bottom right, aquamarine, aqua, yellow);
     text-align: center;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+#results {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.card {
+    width: 250px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.remove {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+@media(max-width: 1000px) {
+    .card {
+
+    }
 }
