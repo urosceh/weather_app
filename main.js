@@ -7,7 +7,7 @@ fetch('https://restcountries.eu/rest/v2/region/europe')
             const input_option = document.createElement("option")
             // var option_value = `city=${country.capital}&country=${country.alpha2Code}`
             
-            var option_value = `${country.capital},${country.alpha2Code}`
+            var option_value = `${country.capital}, ${country.alpha2Code}`
 
             input_option.setAttribute("value", option_value)
             input_options.appendChild(input_option)
@@ -17,7 +17,7 @@ fetch('https://restcountries.eu/rest/v2/region/europe')
 function display_weather() {
     var selected_city = document.getElementById("city").value.toLowerCase()
     
-    var split_key = selected_city.split(",")
+    var split_key = selected_city.split(", ")
     var city = split_key[0]
     var country_code = split_key[1]
     city = city.split(" ").join("-")
