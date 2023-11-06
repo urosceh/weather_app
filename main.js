@@ -5,7 +5,6 @@ fetch('https://restcountries.eu/rest/v2/region/europe')
         const input_options = document.getElementById("cities")
         data.forEach(country => {
             const input_option = document.createElement("option")
-            // var option_value = `city=${country.capital}&country=${country.alpha2Code}`
             
             var option_value = `${country.capital}, ${country.alpha2Code}`
 
@@ -81,8 +80,6 @@ function get_results(data) {
     document.getElementById("container").style.justifyContent = "start"
     const results = document.getElementById("results")
     results.appendChild(card)
-
-    // add_remove_functionality()
 }
 
 function reset_top_bar() {
